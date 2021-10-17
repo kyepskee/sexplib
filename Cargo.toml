@@ -1,0 +1,18 @@
+[package]
+name = "sexplib"
+version = "0.1.0"
+authors = ["huBIerTi2 <hubi.wasilewski@gmail.com>"]
+edition = "2018"
+
+[lib]
+
+[dependencies]
+nom = "6.2"
+proc-macro2 = "*"
+quote = "*"
+syn = "*"
+expr = { path = "expr" }
+main = { path = "main" }
+
+[workspace]
+members = ["expr", "main"]
