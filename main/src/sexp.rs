@@ -49,6 +49,20 @@ impl ToTokens for Expr {
     }
 }
 
+impl ToString for Atom {
+    fn to_string(&self) -> String {
+        use crate::parser::pp;
+        pp::pp_atom(self)
+    }
+}
+
+impl ToString for Expr {
+    fn to_string(&self) -> String {
+        use crate::parser::pp;
+        pp::pp_expr(self)
+    }
+}
+
 impl ToExpr for Expr {
     fn to_expr(&self) -> Expr {
         (*self).clone()
