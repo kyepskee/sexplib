@@ -124,4 +124,12 @@ impl Atom {
             None
         }
     }
+    
+    pub fn sym(&self) -> Option<String> {
+        if let Atom::Sym(x) = self {
+            Some((*x).clone())
+        } else {
+            None
+        }
+    }
 }
