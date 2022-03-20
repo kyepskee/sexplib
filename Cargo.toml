@@ -11,8 +11,8 @@ nom = "6.2"
 proc-macro2 = "*"
 quote = "*"
 syn = "*"
-expr = { path = "expr" }
+_expr = { path = "_expr" }
 main = { path = "main" }
 
 [workspace]
-members = ["expr", "main"]
+members = ["_expr", "main"]

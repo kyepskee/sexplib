@@ -18,11 +18,12 @@ pub fn pp_expr(e: &Expr) -> String {
             let mut s = String::from("(");
             if v.len() > 0 {
                 s.push_str(&pp_expr(&v[0]));
+                for ee in &v[1..] {
+                    s.push(' ');
+                    s.push_str(&pp_expr(ee))
+                }
             }
-            for ee in &v[1..] {
-                s.push(' ');
-                s.push_str(&pp_expr(ee))
-            }
+            s.push(')');
             s
         }
     }

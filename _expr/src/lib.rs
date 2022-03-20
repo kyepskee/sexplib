@@ -14,7 +14,7 @@ pub fn expr(input: TokenStream) -> TokenStream {
     let expr = parser::sexp::parse_expr(&input.to_string()).unwrap().1;
     
     let exp = quote!({
-        use #path as __expr;
+        use #path::{self as __expr};
         #expr
     });
     
